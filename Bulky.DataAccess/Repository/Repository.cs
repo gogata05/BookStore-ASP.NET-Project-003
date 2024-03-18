@@ -17,7 +17,7 @@ namespace BulkyBook.DataAccess.Repository
         public Repository(ApplicationDbContext db)
         {
             _db = db;
-            dbSet = _db.Set<T>();
+            this.dbSet = _db.Set<T>();
             //_db.Categories == dbSet
 
         }
