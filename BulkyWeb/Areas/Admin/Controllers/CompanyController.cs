@@ -1,5 +1,4 @@
 ﻿using BulkyBook.DataAccess.Repository.IRepository;
-using BulkyBook.DataAccess.Data;
 using BulkyBook.Models;
 using BulkyBook.Models.ViewModels;
 using BulkyBook.Utility;
@@ -12,7 +11,7 @@ using System.Data;
 namespace BulkyBookWeb.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    //[Authorize(Roles = SD.Role_Admin)]
+    [Authorize(Roles = SD.Role_Admin)]
     public class CompanyController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -20,16 +19,16 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
         {
             _unitOfWork = unitOfWork;
         }
-        public IActionResult Index() 
+        public IActionResult Index()
         {
             List<Company> objCompanyList = _unitOfWork.Company.GetAll().ToList();
-           
+
             return View(objCompanyList);
         }
 
         public IActionResult Upsert(int? id)
         {
-           
+
             if (id == null || id == 0)
             {
                 //create
@@ -38,17 +37,17 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             else
             {
                 //update
-                Company companyObj = _unitOfWork.Company.Get(u=>u.Id==id);
+                Company companyObj = _unitOfWork.Company.Get(u => u.Id == id);
                 return View(companyObj);
             }
-            
+
         }
         [HttpPost]
         public IActionResult Upsert(Company CompanyObj)
         {
             if (ModelState.IsValid)
             {
-                
+
                 if (CompanyObj.Id == 0)
                 {
                     _unitOfWork.Company.Add(CompanyObj);
@@ -57,14 +56,14 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
                 {
                     _unitOfWork.Company.Update(CompanyObj);
                 }
-                
+
                 _unitOfWork.Save();
                 TempData["success"] = "Company created successfully";
                 return RedirectToAction("Index");
             }
             else
             {
-                
+
                 return View(CompanyObj);
             }
         }
