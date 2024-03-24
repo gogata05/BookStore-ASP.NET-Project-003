@@ -1,4 +1,4 @@
-﻿var dataTable;
+var dataTable;
 
 $(document).ready(function () {
     loadDataTable();
@@ -6,7 +6,7 @@ $(document).ready(function () {
 
 function loadDataTable() {
     dataTable = $('#tblData').DataTable({
-        "ajax": { url: '/admin/user/getall' },
+        "ajax": { url:'/admin/user/getall'},
         "columns": [
             { "data": "name", "width": "15%" },
             { "data": "email", "width": "15%" },
@@ -14,7 +14,7 @@ function loadDataTable() {
             { "data": "company.name", "width": "15%" },
             { "data": "role", "width": "15%" },
             {
-                data: { id: "id", lockoutEnd: "lockoutEnd" },
+                data: { id:"id", lockoutEnd:"lockoutEnd"},
                 "render": function (data) {
                     var today = new Date().getTime();
                     var lockout = new Date(data.lockoutEnd).getTime();
@@ -44,7 +44,7 @@ function loadDataTable() {
                     `
                     }
 
-
+                   
                 },
                 "width": "25%"
             }
