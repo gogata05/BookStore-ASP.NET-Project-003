@@ -66,8 +66,8 @@ SSMS and MS SQL are used for storing & managing the data.
 
 
 ## Demo
-Live demo at Replit -
-Live demo at Youtube - 
+Live demo at Replit - https://replit.com/@GeorgiMarkov/Bulky-ASPNET-Project-003?v=1
+Live demo at Youtube - https://youtu.be/69vzte03_S4
 
 ## Photos
 
