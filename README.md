@@ -1,11 +1,13 @@
-Bulky-ASP.NET-Project-003
+BookStore-ASP.NET-Project-003
 
-# BulkyBook
+# BookStore
 
 ## Introduction
-BulkyBook is application for buying eBooks.
+
+BookStore is application for buying eBooks.
 
 ## Features
+
 - Stripe Payment
 - DataTables
 - SweetAlerts
@@ -13,49 +15,54 @@ BulkyBook is application for buying eBooks.
 - Roles
 
 ### User Roles
+
 - **Customer**: Upon registration, can shop and pay eBooks
-- **Company**: A customer role change to Company by the admin 
+- **Company**: A customer role change to Company by the admin
 - **Admin**: 1st admin is seeded after than admin can change users role to make admins
 
 ## Role Details:
 
 ### Customer Role
+
 - Can view eBooks and their details
 - Can see its own orders
 - Add books to cart
 - Pay with Stripe Payment
 
 ### Company Role
+
 - Company also has the Customer functionality,but i can pay up to 30 days later.
 
 ### Admin Role
-- Can access Content Management:  
+
+- Can access Content Management:
 - Create new users
 - Change roles
 - Ban accounts
 - Edit/Delete Category List/Company List and Product List
 - Can see all orders
 
-
 ## Seeded Roles logins:
+
 - Admin: `username: admin@gmail.com`, `password: Chelsea05.`
 
 ## How to use?
+
 - 0.Download the repository and extract it to folder
-- 1.Open Bulky.sln with visual studio 2022
+- 1.Open BookStore.sln with visual studio 2022
 - 2.In appsetting.json add your personal "ConnectionStrings"
-- 3.right click on BulkyWeb Project and "Set as Startup Project"
-- 4.In "Package Manager Console" with Default project: "Bulky.DataAccess" type: update database
+- 3.right click on BookStoreWeb Project and "Set as Startup Project"
+- 4.In "Package Manager Console" with Default project: "BookStore.DataAccess" type: update database
 - 5.Ctrl+F5
 - 6.Open Url localhost on your browser: https://localhost:7160/
 - 7.Enjoy!
 
-
 ## Used libraries:
+
     - `Tiny` - for advanced description editor
     - `DataTables` - for advanced tables with pagination,search,sorting ect.
     - `SweetAlerts` - for for cool delete notifications
-    - `Toastr` - for notifications 
+    - `Toastr` - for notifications
     - `jQuery` - simplifying html and css
     - `bootstrap` - CSS Framework
     - `Stripe` - for Payments
@@ -64,9 +71,9 @@ BulkyBook is application for buying eBooks.
 
 SSMS and MS SQL are used for storing & managing the data.
 
-
 ## Demo
-Live demo at Replit - https://replit.com/@GeorgiMarkov/Bulky-ASPNET-Project-003?v=1
+
+Live demo at Replit - https://replit.com/@GeorgiMarkov/BookStore-ASPNET-Project-003?v=1
 
 Live demo at Youtube - https://youtu.be/69vzte03_S4
 
@@ -78,8 +85,7 @@ Stripe Payment:
 
 Home with all books to buy:
 
-![image](Images/Home%20with%20all%20books%20to%20buy.png) 
-
+![image](Images/Home%20with%20all%20books%20to%20buy.png)
 
 Book Details:
 
